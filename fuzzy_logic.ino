@@ -1,10 +1,9 @@
-// NB - Negative Big
 // NM - Negative Medium
 // NS - Negative Small
 // ZO - Zero
 // PS - Positive Small
 // PM - Positive Medium
-// PB - Positive Big
+
 
 void initFuzzyLogic(){
   FuzzyInput* ballPosition = new FuzzyInput(1);
@@ -67,11 +66,11 @@ void initFuzzyLogic(){
   positionPS_setPointPS->joinWithAND(position_ps, setpoint_ps);
   positionPM_setPointPM->joinWithAND(position_pm, setpoint_pm);
   
-  FuzzyRule* Rule1 = new FuzzyRule(1, positionNM_setPointNM, then_thetaPS);
-  FuzzyRule* Rule2 = new FuzzyRule(2, positionNS_setPointNS, then_thetaPS);
+  FuzzyRule* Rule1 = new FuzzyRule(1, positionNM_setPointNM, then_thetaZO);
+  FuzzyRule* Rule2 = new FuzzyRule(2, positionNS_setPointNS, then_thetaZO);
   FuzzyRule* Rule3 = new FuzzyRule(3, positionZO_setPointZO, then_thetaZO);
-  FuzzyRule* Rule4 = new FuzzyRule(4, positionPS_setPointPS, then_thetaNS);
-  FuzzyRule* Rule5 = new FuzzyRule(5, positionPM_setPointPM, then_thetaNS);
+  FuzzyRule* Rule4 = new FuzzyRule(4, positionPS_setPointPS, then_thetaZO);
+  FuzzyRule* Rule5 = new FuzzyRule(5, positionPM_setPointPM, then_thetaZO);
   
   FuzzyRuleAntecedent* positionNM_setPointNS = new FuzzyRuleAntecedent();
   FuzzyRuleAntecedent* positionNM_setPointZO = new FuzzyRuleAntecedent();
