@@ -7,7 +7,6 @@ void initSensor(){
 }
 
 float calculateDistance(){
-  int r = 2; // r = radius of ball
   float distance, duration;
   
   digitalWrite(trigPin, LOW);
@@ -18,7 +17,7 @@ float calculateDistance(){
   digitalWrite(trigPin, LOW);
   
   distance = (calculateDuration()/2) * 0.0344;
-  distance = distance - r;
+  distance = distance - R;
   if(distance >= 27){distance = 27;}
   if(distance <= 0){distance = 0;}
 

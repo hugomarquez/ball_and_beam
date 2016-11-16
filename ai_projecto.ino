@@ -8,6 +8,13 @@
 #include <FuzzyRuleConsequent.h>
 #include <FuzzyInput.h>
 
+int const L = 27;       // Longitude of beam
+int const R = 2;        // Radius of ball
+int const MIN = 50;     // Minimum theta angle
+int const MAX = 140;    // Maximum theta angle
+int const mspeed = 100; // Motor Speed in ms
+float set_point = 15;    // Set point
+
 
 Fuzzy* fuzzyObj = new Fuzzy();
 
@@ -27,7 +34,7 @@ FuzzySet* theta_nm = new FuzzySet(0, 35, 35, 50);
 FuzzySet* theta_ns = new FuzzySet(35, 45, 45, 90);
 FuzzySet* theta_zo = new FuzzySet(50, 80, 80, 110);
 FuzzySet* theta_ps = new FuzzySet(80, 100, 100, 130);
-FuzzySet* theta_pm = new FuzzySet(90, 110, 110, 140);
+FuzzySet* theta_pm = new FuzzySet(90, 110, 110, MAX);
 
 void setup() {
   Serial.begin(9600);
@@ -38,55 +45,17 @@ void setup() {
 
 void loop() {
   float ball_position = calculateDistance();
-  float set_point = 5;
   
   fuzzyObj->setInput(1,ball_position);
   fuzzyObj->setInput(2,set_point);
   
   fuzzyObj->fuzzify();
   
-  Serial.println("");
-  Serial.print("Ball Position: ");  
-  Serial.print(position_nm->getPertinence());
-  Serial.print(",");
-  Serial.print(position_ns->getPertinence());
-  Serial.print(",");
-  Serial.print(position_zo->getPertinence());
-  Serial.print(",");
-  Serial.print(position_ps->getPertinence());
-  Serial.print(",");
-  Serial.println(position_pm->getPertinence());
-
-  Serial.print("Set Point: ");
-  Serial.print(setpoint_nm->getPertinence());
-  Serial.print(",");
-  Serial.print(setpoint_ns->getPertinence());
-  Serial.print(",");
-  Serial.print(setpoint_zo->getPertinence());
-  Serial.print(",");
-  Serial.print(setpoint_ps->getPertinence());
-  Serial.print(",");
-  Serial.println(setpoint_pm->getPertinence());
-  
   float thetaOutput = fuzzyObj->defuzzify(1);
   
-
-  Serial.print("Theta: ");
-  Serial.println(thetaOutput);
-
-  Serial.print("Output pertinence: ");
-  Serial.print(theta_nm->getPertinence());
-  Serial.print(",");
-  Serial.print(theta_ns->getPertinence());
-  Serial.print(",");
-  Serial.print(theta_zo->getPertinence());
-  Serial.print(",");
-  Serial.print(theta_ps->getPertinence());
-  Serial.print(",");
-  Serial.println(theta_pm->getPertinence());
+  logger(thetaOutput);
   
-  //moveServo(thetaOutput);
+  moveServo(thetaOutput);
 
-  delay(1000);
+  delay(mspeed);
 }
-

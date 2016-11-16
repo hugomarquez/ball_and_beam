@@ -7,12 +7,9 @@ void initServo(){
 }
 
 void moveServo(float theta){
-  // Min&Max theta
-  // note cetner = 100
-  int minimum = 50;
   int maximum = 140;
-  if(theta <= 10){theta = minimum;}
-  if(theta >= 175){theta = maximum;}
+  if(theta <= 10){theta = MIN;}
+  if(theta >= 175){theta = MAX;}
   
   servo.write(theta);
 }
