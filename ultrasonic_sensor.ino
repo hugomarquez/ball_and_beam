@@ -16,7 +16,16 @@ float calculateDistance(){
   digitalWrite(trigPin, LOW);
   
   distance = (calculateDuration()/2) * 0.0344;
+  Serial.print("Real Distance = ");
+  Serial.println(distance);
 
+  distance = distance - 2;
+  if(distance >= 27){distance = 27;}
+  if(distance <= 0){distance = 0;}
+
+  Serial.print("Adjust Distance = ");
+  Serial.println(distance);
+  
   return distance;
 }
 

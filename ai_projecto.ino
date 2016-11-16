@@ -11,23 +11,23 @@
 
 Fuzzy* fuzzyObj = new Fuzzy();
 
-FuzzySet* position_nm = new FuzzySet(1, 1, 3, 7);
-FuzzySet* position_ns = new FuzzySet(3, 9, 9, 14);
-FuzzySet* position_zo = new FuzzySet(9, 15, 15, 21);
-FuzzySet* position_ps = new FuzzySet(15, 22, 22, 28);
-FuzzySet* position_pm = new FuzzySet(22, 30, 30, 35);
+FuzzySet* position_nm = new FuzzySet(0, 0, 2.7, 5.4);
+FuzzySet* position_ns = new FuzzySet(2.7, 7, 7, 10.8);
+FuzzySet* position_zo = new FuzzySet(6, 11, 11, 16.2);
+FuzzySet* position_ps = new FuzzySet(11, 15, 15, 21.6);
+FuzzySet* position_pm = new FuzzySet(15, 19, 19, 30);
 
-FuzzySet* setpoint_nm = new FuzzySet(1, 1, 3, 7);
-FuzzySet* setpoint_ns = new FuzzySet(3, 9, 9, 14);
-FuzzySet* setpoint_zo = new FuzzySet(9, 15, 15, 21);
-FuzzySet* setpoint_ps = new FuzzySet(15, 22, 22, 28);
-FuzzySet* setpoint_pm = new FuzzySet(22, 30, 30, 35);
+FuzzySet* setpoint_nm = new FuzzySet(0, 0, 2.7, 5.4);
+FuzzySet* setpoint_ns = new FuzzySet(2.7, 7, 7, 10.8);
+FuzzySet* setpoint_zo = new FuzzySet(6, 11, 11, 16.2);
+FuzzySet* setpoint_ps = new FuzzySet(11, 15, 15, 21.6);
+FuzzySet* setpoint_pm = new FuzzySet(15, 19, 19, 30);
 
-FuzzySet* theta_nm = new FuzzySet(1, 20, 20, 47.5);
-FuzzySet* theta_ns = new FuzzySet(20, 60, 60, 95);
-FuzzySet* theta_zo = new FuzzySet(60, 95, 95, 120.5);
-FuzzySet* theta_ps = new FuzzySet(95, 142, 142, 160);
-FuzzySet* theta_pm = new FuzzySet(142, 142, 170, 170);
+FuzzySet* theta_nm = new FuzzySet(0, 35, 35, 50);
+FuzzySet* theta_ns = new FuzzySet(35, 45, 45, 90);
+FuzzySet* theta_zo = new FuzzySet(50, 80, 80, 110);
+FuzzySet* theta_ps = new FuzzySet(80, 100, 100, 130);
+FuzzySet* theta_pm = new FuzzySet(90, 110, 110, 140);
 
 void setup() {
   Serial.begin(9600);
@@ -38,7 +38,7 @@ void setup() {
 
 void loop() {
   float ball_position = calculateDistance();
-  float set_point = 15;
+  float set_point = 5;
   
   fuzzyObj->setInput(1,ball_position);
   fuzzyObj->setInput(2,set_point);
@@ -87,6 +87,6 @@ void loop() {
   
   moveServo(thetaOutput);
 
-  delay(200);
+  delay(100);
 }
 
