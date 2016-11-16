@@ -13,7 +13,7 @@ int const R = 2;        // Radius of ball
 int const MIN = 50;     // Minimum theta angle
 int const MAX = 140;    // Maximum theta angle
 int const mspeed = 100; // Motor Speed in ms
-float set_point = 15;    // Set point
+float set_point = 5;    // Set point
 
 
 Fuzzy* fuzzyObj = new Fuzzy();
