@@ -7,7 +7,9 @@ void initSensor(){
 }
 
 float calculateDistance(){
+  int r = 2; // r = radius of ball
   float distance, duration;
+  
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
 
@@ -16,14 +18,11 @@ float calculateDistance(){
   digitalWrite(trigPin, LOW);
   
   distance = (calculateDuration()/2) * 0.0344;
-  Serial.print("Real Distance = ");
-  Serial.println(distance);
-
-  distance = distance - 2;
+  distance = distance - r;
   if(distance >= 27){distance = 27;}
   if(distance <= 0){distance = 0;}
 
-  Serial.print("Adjust Distance = ");
+  Serial.print("Adjusted Distance = ");
   Serial.println(distance);
   
   return distance;

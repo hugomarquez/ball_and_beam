@@ -85,8 +85,8 @@ void loop() {
   Serial.print(",");
   Serial.println(theta_pm->getPertinence());
   
-  moveServo(thetaOutput);
+  //moveServo(thetaOutput);
 
-  delay(100);
+  delay(1000);
 }
 
