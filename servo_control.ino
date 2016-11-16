@@ -3,7 +3,7 @@ Servo servo;
 
 void initServo(){
   servo.attach(9);
-  servo.write(100);
+  servo.write(initMposition);
 }
 
 void moveServo(float theta){

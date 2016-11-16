@@ -8,12 +8,23 @@
 #include <FuzzyRuleConsequent.h>
 #include <FuzzyInput.h>
 
-int const L = 27;       // Longitude of beam
-int const R = 2;        // Radius of ball
-int const MIN = 50;     // Minimum theta angle
-int const MAX = 140;    // Maximum theta angle
-int const mspeed = 100; // Motor Speed in ms
-float set_point = 5;    // Set point
+// Longitude of beam
+int const L = 27;
+// Radius of ball
+int const R = 3;
+// Minimum theta angle
+int const MIN = 50;
+// Maximum theta angle
+int const MAX = 140;
+// Reaction Speed in ms
+int const rspeed = 1000;
+// Initial Motor Position
+int const initMposition = 100;
+// Move Motor?
+bool moveMotor = false;
+
+// Set point
+float set_point = 5;
 
 
 Fuzzy* fuzzyObj = new Fuzzy();
@@ -55,7 +66,9 @@ void loop() {
   
   logger(thetaOutput);
   
-  moveServo(thetaOutput);
+  if(moveMotor){
+    moveServo(thetaOutput);
+  }
 
-  delay(mspeed);
+  delay(rspeed);
 }
