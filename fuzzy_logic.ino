@@ -97,10 +97,10 @@ void initFuzzyLogic(){
   positionNS_setPointPS->joinWithAND(position_ns, setpoint_ps);
   positionNS_setPointPM->joinWithAND(position_ns, setpoint_pm);
   
-  FuzzyRule* Rule10 = new FuzzyRule(10, positionNS_setPointNM, then_thetaPM);
+  FuzzyRule* Rule10 = new FuzzyRule(10, positionNS_setPointNM, then_thetaZO);
   FuzzyRule* Rule11 = new FuzzyRule(11, positionNS_setPointZO, then_thetaNS);
-  FuzzyRule* Rule12 = new FuzzyRule(12, positionNS_setPointPS, then_thetaNS);
-  FuzzyRule* Rule13 = new FuzzyRule(13, positionNS_setPointPM, then_thetaNM);
+  FuzzyRule* Rule12 = new FuzzyRule(12, positionNS_setPointPS, then_thetaZO);
+  FuzzyRule* Rule13 = new FuzzyRule(13, positionNS_setPointPM, then_thetaNS);
   
   FuzzyRuleAntecedent* positionZO_setPointNM = new FuzzyRuleAntecedent();
   FuzzyRuleAntecedent* positionZO_setPointNS = new FuzzyRuleAntecedent();
@@ -113,7 +113,7 @@ void initFuzzyLogic(){
   positionZO_setPointPM->joinWithAND(position_zo, setpoint_pm);
   
   FuzzyRule* Rule14 = new FuzzyRule(14, positionZO_setPointNM, then_thetaPS);
-  FuzzyRule* Rule15 = new FuzzyRule(15, positionZO_setPointNS, then_thetaPS);
+  FuzzyRule* Rule15 = new FuzzyRule(15, positionZO_setPointNS, then_thetaPS);//PM
   FuzzyRule* Rule16 = new FuzzyRule(16, positionZO_setPointPS, then_thetaNS);
   FuzzyRule* Rule17 = new FuzzyRule(17, positionZO_setPointPM, then_thetaNS);
   
@@ -130,7 +130,7 @@ void initFuzzyLogic(){
   FuzzyRule* Rule18 = new FuzzyRule(18, positionPS_setPointNM, then_thetaPM);
   FuzzyRule* Rule19 = new FuzzyRule(19, positionPS_setPointNS, then_thetaPS);
   FuzzyRule* Rule20 = new FuzzyRule(20, positionPS_setPointZO, then_thetaPS);
-  FuzzyRule* Rule21 = new FuzzyRule(21, positionPS_setPointPM, then_thetaNM);
+  FuzzyRule* Rule21 = new FuzzyRule(21, positionPS_setPointPM, then_thetaZO);//NM
   
   FuzzyRuleAntecedent* positionPM_setPointNM = new FuzzyRuleAntecedent();
   FuzzyRuleAntecedent* positionPM_setPointNS = new FuzzyRuleAntecedent();

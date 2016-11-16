@@ -27,7 +27,7 @@ FuzzySet* theta_nm = new FuzzySet(1, 20, 20, 47.5);
 FuzzySet* theta_ns = new FuzzySet(20, 60, 60, 95);
 FuzzySet* theta_zo = new FuzzySet(60, 95, 95, 120.5);
 FuzzySet* theta_ps = new FuzzySet(95, 142, 142, 160);
-FuzzySet* theta_pm = new FuzzySet(142, 142, 180, 1);
+FuzzySet* theta_pm = new FuzzySet(142, 142, 170, 170);
 
 void setup() {
   Serial.begin(9600);
@@ -38,7 +38,7 @@ void setup() {
 
 void loop() {
   float ball_position = calculateDistance();
-  float set_point = 15;
+  float set_point = 10;
   
   fuzzyObj->setInput(1,ball_position);
   fuzzyObj->setInput(2,set_point);
@@ -84,9 +84,9 @@ void loop() {
   Serial.print(theta_ps->getPertinence());
   Serial.print(",");
   Serial.println(theta_pm->getPertinence());
+  
+  moveServo(thetaOutput);
 
-  //moveServo(thetaOutput);
-
-  delay(200);
+  delay(300);
 }
 
