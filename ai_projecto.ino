@@ -38,7 +38,7 @@ void setup() {
 
 void loop() {
   float ball_position = calculateDistance();
-  float set_point = 10;
+  float set_point = 15;
   
   fuzzyObj->setInput(1,ball_position);
   fuzzyObj->setInput(2,set_point);
@@ -87,6 +87,6 @@ void loop() {
   
   moveServo(thetaOutput);
 
-  delay(300);
+  delay(200);
 }
 

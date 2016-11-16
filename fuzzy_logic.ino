@@ -115,7 +115,7 @@ void initFuzzyLogic(){
   FuzzyRule* Rule14 = new FuzzyRule(14, positionZO_setPointNM, then_thetaPS);
   FuzzyRule* Rule15 = new FuzzyRule(15, positionZO_setPointNS, then_thetaPS);//PM
   FuzzyRule* Rule16 = new FuzzyRule(16, positionZO_setPointPS, then_thetaNS);
-  FuzzyRule* Rule17 = new FuzzyRule(17, positionZO_setPointPM, then_thetaNS);
+  FuzzyRule* Rule17 = new FuzzyRule(17, positionZO_setPointPM, then_thetaZO);
   
   FuzzyRuleAntecedent* positionPS_setPointNM = new FuzzyRuleAntecedent();
   FuzzyRuleAntecedent* positionPS_setPointNS = new FuzzyRuleAntecedent();
