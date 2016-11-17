@@ -1,2 +1,2 @@
-# ball_and_beam
-Ball and Beam with fuzzy logic
+# Ball and Beam with Arduino
+Example usage of EFLL library in arduino.
