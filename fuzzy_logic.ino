@@ -68,7 +68,7 @@ void initFuzzyLogic(){
   positionNM_setPointPM->joinWithAND(position_nm, setpoint_pm);
   
   FuzzyRule* Rule1 = new FuzzyRule(1, positionNM_setPointNM, then_thetaZO);
-  FuzzyRule* Rule2 = new FuzzyRule(2, positionNM_setPointNS, then_thetaZO);
+  FuzzyRule* Rule2 = new FuzzyRule(2, positionNM_setPointNS, then_thetaNS);
   FuzzyRule* Rule3 = new FuzzyRule(3, positionNM_setPointZO, then_thetaNS);
   FuzzyRule* Rule4 = new FuzzyRule(4, positionNM_setPointPS, then_thetaNS);
   FuzzyRule* Rule5 = new FuzzyRule(5, positionNM_setPointPM, then_thetaNM);
@@ -95,8 +95,8 @@ void initFuzzyLogic(){
   FuzzyRule* Rule6 = new FuzzyRule(6, positionNS_setPointNS, then_thetaZO);
   FuzzyRule* Rule7 = new FuzzyRule(7, positionNS_setPointNM, then_thetaZO);
   FuzzyRule* Rule8 = new FuzzyRule(8, positionNS_setPointZO, then_thetaNS);
-  FuzzyRule* Rule9 = new FuzzyRule(9, positionNS_setPointPS, then_thetaZO);
-  FuzzyRule* Rule10 = new FuzzyRule(10, positionNS_setPointPM, then_thetaNS);
+  FuzzyRule* Rule9 = new FuzzyRule(9, positionNS_setPointPS, then_thetaNS);
+  FuzzyRule* Rule10 = new FuzzyRule(10, positionNS_setPointPM, then_thetaNM);
 
   fuzzyObj->addFuzzyRule(Rule6);
   fuzzyObj->addFuzzyRule(Rule7);
@@ -119,9 +119,9 @@ void initFuzzyLogic(){
   
   FuzzyRule* Rule11 = new FuzzyRule(11, positionZO_setPointZO, then_thetaZO);
   FuzzyRule* Rule12 = new FuzzyRule(12, positionZO_setPointNM, then_thetaPS);
-  FuzzyRule* Rule13 = new FuzzyRule(13, positionZO_setPointNS, then_thetaPS);//PM
-  FuzzyRule* Rule14 = new FuzzyRule(14, positionZO_setPointPS, then_thetaNS);
-  FuzzyRule* Rule15 = new FuzzyRule(15, positionZO_setPointPM, then_thetaZO);
+  FuzzyRule* Rule13 = new FuzzyRule(13, positionZO_setPointNS, then_thetaPS);
+  FuzzyRule* Rule14 = new FuzzyRule(14, positionZO_setPointPS, then_thetaZO);
+  FuzzyRule* Rule15 = new FuzzyRule(15, positionZO_setPointPM, then_thetaNS);
 
   fuzzyObj->addFuzzyRule(Rule11);
   fuzzyObj->addFuzzyRule(Rule12);
@@ -145,7 +145,7 @@ void initFuzzyLogic(){
   FuzzyRule* Rule16 = new FuzzyRule(16, positionPS_setPointPS, then_thetaZO);
   FuzzyRule* Rule17 = new FuzzyRule(17, positionPS_setPointNM, then_thetaPM);
   FuzzyRule* Rule18 = new FuzzyRule(18, positionPS_setPointNS, then_thetaPS);
-  FuzzyRule* Rule19 = new FuzzyRule(19, positionPS_setPointZO, then_thetaPS);
+  FuzzyRule* Rule19 = new FuzzyRule(19, positionPS_setPointZO, then_thetaZO);
   FuzzyRule* Rule20 = new FuzzyRule(20, positionPS_setPointPM, then_thetaZO);
 
   fuzzyObj->addFuzzyRule(Rule16);

@@ -7,7 +7,6 @@ void initServo(){
 }
 
 void moveServo(float theta){
-  int maximum = 140;
   if(theta <= 10){theta = MIN;}
   if(theta >= 175){theta = MAX;}
   

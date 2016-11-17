@@ -18,7 +18,7 @@ float calculateDistance(){
   
   distance = (calculateDuration()/2) * 0.0344;
   distance = distance - R;
-  if(distance >= L){distance = L;}
+  if(distance > L){distance = L;}
   if(distance <= 0){distance = 0;}
 
   Serial.print("Adjusted Distance = ");
