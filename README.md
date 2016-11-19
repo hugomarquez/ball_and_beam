@@ -1,5 +1,8 @@
 # Ball and Beam with Arduino
 Example usage of EFLL library in arduino.
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/C3p71DaqUcc/0.jpg)](http://www.youtube.com/watch?v=C3p71DaqUcc "Ball and Beam")
+
 ## EFLL Lib
 http://www.zerokol.com/2012/09/arduinofuzzy-fuzzy-library-for-arduino.html
 
