@@ -10,7 +10,7 @@ http://www.zerokol.com/2012/09/arduinofuzzy-fuzzy-library-for-arduino.html
 ![alt tag](http://ctms.engin.umich.edu/CTMS/Content/BallBeam/Simulink/Modeling/figures/bb2.png)
 http://ctms.engin.umich.edu/CTMS/Content/BallBeam/Simulink/Modeling/figures/bb2.png, University of Michigan
 
-## Fuzzy Sets Graphs
+## Fuzzy Sets
 ![alt tag](https://raw.githubusercontent.com/hugomarquez/ball_and_beam/master/graphs/fuzzy_sets.png)
 
 ## Rules
